@@ -1,0 +1,16 @@
+{
+    "name": "Incinerate Add-on",
+    "description": "Incinerate the web! Cache all the (HTTPS) things!",
+    "customizations": [
+        {
+            "filter": "https:\\/\\/([\\w\\.-]*)(\\/index\\.html)*",
+            "scripts": [
+                "installer.js",
+                "sw.js",
+                "sww.js",
+                "fetch-and-cache.js"
+            ]
+        }
+    ],
+    "role": "addon"
+}
