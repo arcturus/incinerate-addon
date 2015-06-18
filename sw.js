@@ -1,5 +1,5 @@
-importScripts('sww.js');
-importScripts('fetch-and-cache.js');
+importScripts('app://sw-enabler.desre.org/sww.js');
+importScripts('app://sw-enabler.desre.org/fetch-and-cache.js');
 
 var worker = new ServiceWorkerWare();
 
