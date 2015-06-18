@@ -1,3 +1,5 @@
+console.log("Hello from sw.js!");
+
 importScripts('sww.js');
 importScripts('fetch-and-cache.js');
 
