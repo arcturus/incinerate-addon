@@ -5,12 +5,11 @@
         {
             "filter": "https:\\/\\/([\\w\\.-]*)(\\/index\\.html)*",
             "scripts": [
-                "installer.js",
-                "sw.js",
-                "sww.js",
-                "fetch-and-cache.js"
+                "installer.js"
             ]
         }
     ],
-    "role": "addon"
+    "role": "addon",
+    "type": "certified",
+    "origin": "app://sw-enabler.desre.org"
 }

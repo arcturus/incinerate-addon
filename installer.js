@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
       return;
     }
     console.log('Registering SW for url ' + document.location);
-    navigator.serviceWorker.register('sw.js');
+    navigator.serviceWorker.register('app://sw-enabler.desre.org/sw.js');
     // On SW claim, reload to cache the start page
     navigator.serviceWorker.addEventListener('controllerchange', function(evt) {
       console.log('Controller change ::: ', evt);
