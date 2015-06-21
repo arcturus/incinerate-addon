@@ -1,3 +1,5 @@
+console.log("Hello from sw.js!");
+
 importScripts('app://sw-enabler.desre.org/sww.js');
 importScripts('app://sw-enabler.desre.org/fetch-and-cache.js');
 
