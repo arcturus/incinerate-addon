@@ -15,18 +15,24 @@ function FetchAndCache(cacheName) {
 
 FetchAndCache.prototype.onFetch = function onFetch(req) {
   var _that = this;
+  console.log('SW doing request for ' + req.url);
   return this.getCache().then(function() {
-    return fetch(req).then(function(res) {
+    console.log('Doing the fetch');
+    return fetch(req.clone()).then(function(res) {
       // Catch just if it's a valid response (trivial check)
       var clone = res.clone();
       if (res.status < 400) {
-        return _that.cache.put(req, res).then(function() {
-          return clone;
+        console.log('----> got a valid response');
+        return _that.cache.put(req, clone).then(function() {
+          console.log('--> caching ' + req.url);
+          return Promise.resolve(res);
         });
       } else {
-        return res;
+        console.log('Got an error in the request with status ' + res.status);
+        return Promise.resolve(res);
       }
-    }).catch(function() {
+    }).catch(function(e) {
+      console.log('Error on the fetch, trying to return from cache ', e);
       return _that.cache.match(req);
     });
   });
